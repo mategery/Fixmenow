@@ -1,0 +1,159 @@
+/* Alap stílusok az egész oldalra */
+body {
+    font-family: Arial;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Táblázat stílusai */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Összevont határok */
+    margin-top: 20px;
+    font-family: arial;
+    
+}
+
+/* Üzenetek stílusai */
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Mélyebb árnyék */
+    position: relative;
+
+}
+
+h1 {
+    font-size: 48px; /* Növelt betűméret */
+    text-align: center;
+    letter-spacing: 2px; /* Betűk közötti távolság */
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #555;
+    margin-top: 0px;
+}
+
+.back-icon {
+    cursor: pointer; /* Kézmutató kurzor */
+    color: #f44336; /* Piros szín */
+    margin-right: 10px; /* Térköz a vissza ikon és a cím között */
+    font-size: 48px; /* Vissza ikon mérete */
+}
+
+.mytasks-icon {
+    margin-left: 10px; /* Térköz a cím és a könyv ikon között */
+    font-size: 48px; /* Könyv ikon mérete */
+    color: #4caf50; /* Zöld szín */
+}
+
+/* Gomb hover állapot színek */
+.back-icon:hover {
+    color: #d32f2f; /* Sötétebb piros hover állapotban */
+}
+
+.mytasks-icon:hover {
+    color: #388e3c; /* Sötétebb zöld hover állapotban */
+}
+
+/* Gomb active állapot színek */
+.back-icon:active {
+    color: #a82525; /* Sötétebb piros active állapotban */
+}
+
+.mytasks-icon:active {
+    color: #2e7d32; /* Sötétebb zöld active állapotban */
+}
+
+
+
+th, td {
+    padding: 15px; /* Belső margó */
+    text-align: left; /* Szöveg igazítása balra */
+    font-size: 18px; /* Növelt betűméret a táblázat celláiban */
+    font-weight: bold;
+    color: #555;
+}
+
+th {
+    background-color: #007BFF; /* Kék háttérszín */
+    color: white; /* Fehér szöveg szín */
+    font-weight: bold; /* Fejléc vastag betűvel */
+    cursor: auto;
+}
+
+/* Minden sor összefogása */
+tr {
+    border-radius: 12px; /* Kerekített sarkok */
+    cursor:pointer;
+}
+
+tr:hover {
+    background-color: #c5e1ff; /* Sötétebb kék hover szín */
+}
+
+button {
+    padding: 5px; /* Nagyobb gomb méret */
+    width: 100%;
+    color: white;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap; /* Megakadályozza a sortörést */
+    font-size: 20px; /* Gomb szöveg méret 20px */
+    margin: 0 0px; /* Térköz a gombok között */
+    text-align: center;
+    border-radius: 4px;
+
+}
+
+
+.button-group {
+    display: flex; /* Flexbox használata a gombok elhelyezésére */
+    gap: 10px; /* Térköz a gombok között */
+    margin-top: 20px; /* Térköz a táblázat alatt */
+}
+
+/* Gomb stílusok */
+.back-button {
+    background-color: #f44336; /* Piros szín */
+}
+
+.mytasks-button {
+    background-color: #4caf50; /* Zöld szín */
+}
+
+/* Gomb hover állapot színek */
+.back-button:hover {
+    background-color: #d32f2f; /* Sötétebb piros hover állapotban */
+}
+
+.mytasks-button:hover {
+    background-color: #388e3c; /* Sötétebb zöld hover állapotban */
+}
+
+/* Gomb active állapot színek */
+.back-button:active {
+    background-color: #a82525; /* Sötétebb piros active állapotban */
+}
+
+.mytasks-button:active {
+    background-color: #2e7d32; /* Sötétebb zöld active állapotban */
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Gomb aktív állapot stílusai */
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+

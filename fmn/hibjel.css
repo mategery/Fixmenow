@@ -1,0 +1,266 @@
+/* Alap stílusok az egész oldalra */
+body {
+    font-family: Arial;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Hibabejelentés konténer stílusai */
+.login-container {
+    background-color: white;
+    padding: 20px;
+    padding-top: 0px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    max-width: 600px;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+}
+
+
+/* Cím stílusai */
+h2 {
+    font-size: 50px;
+    margin: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+/* Űrlap stílusai */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Címke stílusai */
+label {
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Input mezők stílusai */
+input[type="text"],
+input[type="datetime-local"],
+textarea,
+select {
+    margin-bottom: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 20px;
+    transition: border-color 0.3s ease;
+}
+
+/* Hover állapot input mezők */
+input[type="text"]:focus,
+input[type="datetime-local"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #2196F3;
+    outline: none; /* Eltávolítja az alapértelmezett fókusz keretet */
+}
+
+/* Gomb stílusai */
+button {
+    padding: 10px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 16px; /* Növeljük a térközt a gomb fölött */
+}
+
+
+/* Gomb hover állapot stílusai */
+button:hover {
+    background-color: #1E88E5;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+
+}
+
+/* Gomb aktív állapot stílusai */
+button:active {
+    transform: translateY(1px);
+    background-color: #1976D2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+/* Üzenet stílusai */
+p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: none; /* A méretét nem lehet kézzel állítani */
+    height: auto; /* Automatikus magasság */
+    min-height: 30px; /* Minimális magasság */
+    max-height: 300px; /* Maximális magasság */
+    overflow: auto; /* Nincs görgetősáv */
+    line-height: 1.5; /* Sor magasság */
+    font-family: arial;
+}
+
+/* Új stílusok a gombokhoz */
+.button-container-img {
+    display: flex;            /* Flexbox elrendezés */
+    justify-content: space-between; /* Gombok közötti távolság kitöltése */
+    margin-top: 0px;       /* Felső margó a gomboknak */
+    gap: 5px;
+
+}
+.upload-button {
+    background-color: #2196F3; /* Kék háttér a feltöltés gombnak */
+    color: white; /* Fehér szöveg */
+    border: none; /* Nincs keret */
+    padding: 5px; /* Kisebb padding */
+    cursor: pointer; /* Mutatóra vált a kurzor */
+    font-size: 15px; /* Kisebb betűméret */
+    flex: 1; /* Kitölti a rendelkezésre álló helyet */
+    margin-top: 0px;
+}
+
+.upload-button:hover {
+    background-color: #1E88E5; /* Sötétebb zöld háttér hover esetén */
+}
+
+.upload-button:active {
+    background-color: #1976D2; /* Sötétebb zöld háttér hover esetén */
+}
+
+.clear-button {
+    background-color: #F44336; /* Piros háttér a törlés gombnak */
+    color: white; /* Fehér szöveg */
+    border: none; /* Nincs keret */
+    padding: 5px; /* Kisebb padding */
+    cursor: pointer; /* Mutatóra vált a kurzor */
+    font-size: 15px; /* Kisebb betűméret */
+    margin-top: 0px;
+    width: 27px;
+}
+
+
+.clear-button:hover {
+    background-color: #E53935; /* Sötétebb piros háttér hover esetén */
+}
+
+.clear-button:active {
+    background-color: #D32F2F; /* Sötétebb piros háttér hover esetén */
+}
+
+#photo_preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: flex-start; /* Balra igazítás */
+}
+
+#photo_preview div {
+    flex: 1 1 calc(33.333% - 10px); /* Három kép egymás mellett, arányos méret */
+    max-width: calc(33.333% - 10px); /* Maximum szélesség, hogy a képek ne legyenek nagyobbak */
+    position: relative;
+}
+
+#photo_preview img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.tagbutton {
+    width: 100%; /* Kitölti a rendelkezésre álló szélességet */
+    padding: 5px 10px; /* Kisebb padding */
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 15px; /* Nagyobb betűméret */
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+/* A többi stílus megmarad... */
+
+#tags_container {
+    display: flex;
+    flex-direction: row; /* Egy sorba rendezi a checkboxokat és címkéket */
+    flex-wrap: wrap; /* Engedélyezi a sortörést, ha a szélesség nem elegendő */
+    gap: 10px; /* Közötti távolság beállítása */
+}
+
+#tags_container label {
+    display: flex; /* A checkbox és a címke egy sorban legyen */
+    align-items: center; /* Középre igazítja a checkboxot és a címkét */
+}
+
+.button-container-send {
+    display: flex;
+    width: 100%;
+    gap: 10px; /* Kis hézag a gombok között */
+}
+
+.button-container-send button {
+    flex: 1;
+    padding: 10px; /* Vékonyabb gomb */
+    font-size: 22px; /* Nagyobb szöveg a gombokban */
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.send-button {
+    background-color: #4CAF50; /* Zöld háttér a feltöltés gombnak */
+}
+
+.send-button:hover {
+    background-color: #43A047; /* Sötétebb zöld háttér hover esetén */
+}
+
+.send-button:active {
+    background-color: #388E3C; /* Sötétebb zöld háttér hover esetén */
+}
+
+.backbutton {
+    background-color: #F44336;
+}
+
+.backbutton:hover {
+    background-color: #E53935;
+}
+
+.backbutton:active {
+    background-color: #D32F2F;
+}
+
+/* Kép előnézet stílusai */
+.image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.image-preview img {
+    width: 100px; /* Kép szélessége */
+    height: auto; /* Automatikus magasság */
+    border-radius: 0px;
+}

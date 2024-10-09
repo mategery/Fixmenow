@@ -1,0 +1,135 @@
+/* Alap stílusok az egész oldalra */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Dashboard konténer stílusai */
+.dashboard-container {
+    background-color: white;
+    padding: 20px;
+    padding-top: 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Cím stílusai */
+h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+/* Gombok konténerének stílusai */
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Szimmetrikus elhelyezés */
+    margin-top: 20px;
+}
+
+/* Gomb stílusai */
+button {
+    padding: 15px; /* Nagyobb gomb méret */
+    width: 250px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap; /* Megakadályozza a sortörést */
+    font-size: 25px; /* Gomb szöveg méret 20px */
+    margin: 0 20px; /* Térköz a gombok között */
+    text-align: center;
+    border-radius: 4px;
+
+}
+
+/* Vissza lépő gomb stílusai */
+.back-button {
+    background-color: #f44336; /* Piros szín */
+}
+
+/* Gomb hover állapot színek */
+.back-button:hover {
+    background-color: #d32f2f; /* Sötétebb piros hover állapotban */
+}
+
+/* Gomb active állapot színek */
+.back-button:active {
+    background-color: #a82525; /* Sötétebb piros hover állapotban */
+}
+
+/* Hiba bejelentése gomb stílusai */
+.report-button {
+    background-color: #4CAF50; /* Zöld szín */
+}
+
+.report-button:hover {
+    background-color: #308e35; /* Sötétebb zöld hover állapotban */
+}
+
+.report-button:active {
+    background-color: #327535; /* Sötétebb zöld hover állapotban */
+}
+
+/* Feladatokhoz gomb stílusai */
+.tasks-button {
+    background-color: #007BFF; /* Kék szín */
+}
+
+/* Gomb hover állapot színei */
+.tasks-button:hover {
+    background-color: #0056b3; /* Sötétebb kék hover állapotban */
+}
+
+/* Gomb aktív állapot színei */
+.tasks-button:active {
+    background-color: #004494; /* Még sötétebb kék aktív állapotban */
+}
+
+/* Gomb hover állapot stílusai */
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Gomb aktív állapot stílusai */
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Mobil nézethez beállítások */
+@media (max-width: 600px) {
+    .dashboard-container {
+        width: 90%; /* A konténer szélessége 90% */
+        padding: 10px; /* Kisebb padding mobilon */
+    }
+
+    /* Gombok stílusai mobilon */
+    .button-container {
+        flex-direction: column; /* Függőleges elrendezés */
+        align-items: center; /* Középre igazítás */
+    }
+
+    button {
+        width: 100%; /* A gombok szélessége 100% */
+        margin: 10px 0; /* Függőleges térköz a gombok között */
+    }
+
+    /* A gombok sorrendjének megfordítása mobil nézetben */
+    .report-button {
+        order: 1; /* Hiba bejelentése gomb az első helyen */
+    }
+
+    .back-button {
+        order: 2; /* Vissza gomb a második helyen */
+    }
+}
+
