@@ -1,0 +1,170 @@
+/* Általános beállítások */
+body {
+    font-family: 'Arial';
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Konténer stílus */
+.container {
+    background-color: white;
+    padding: 20px;
+    padding-top: 0px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    max-width: 80%;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Cím stílus */
+h1 {
+    font-size: 48px; /* Növelt betűméret */
+    text-align: center;
+    letter-spacing: 1px; /* Betűk közötti távolság */
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: #555;
+}
+
+/* Szöveg stílusok */
+p {
+    font-size: 18px;
+    margin: 15px 0;
+    color: #555;
+}
+
+p strong {
+    color: #222;
+}
+
+button {
+    padding: 10px; /* Nagyobb gomb méret */
+    color: white;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap; /* Megakadályozza a sortörést */
+    font-size: 25px;
+    text-align: center;
+    border-radius: 4px;
+    width: 100%;
+}
+
+/* Gomb hover állapot stílusai */
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Gomb aktív állapot stílusai */
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Gomb stílusok */
+.back-button {
+    background-color: #f44336; /* Piros szín */
+}
+
+.accept-button {
+    background-color: #4caf50; /* Zöld szín */
+}
+
+/* Gomb hover állapot színek */
+.back-button:hover {
+    background-color: #d32f2f; /* Sötétebb piros hover állapotban */
+}
+
+.accept-button:hover {
+    background-color: #388e3c; /* Sötétebb zöld hover állapotban */
+}
+
+/* Gomb active állapot színek */
+.back-button:active {
+    background-color: #a82525; /* Sötétebb piros active állapotban */
+}
+
+.accept-button:active {
+    background-color: #2e7d32; /* Sötétebb zöld active állapotban */
+}
+
+/* Gombok csoport stílusa */
+.button-group {
+    display: flex;
+    gap: 10px; /* Térköz a gombok között */
+}
+
+.button-group form {
+    flex: 1; /* Mindkét gomb egyenlő szélességgel rendelkezik */
+}
+
+/* Linkek és ikon stílus */
+button i {
+    margin-right: 8px;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* A képek közötti távolság */
+    margin-bottom: 20px;
+}
+
+.report-image {
+    max-width: 200px; /* Maximum szélesség a képeknek */
+    height: auto; /* Arányos magasság */
+    object-fit: contain; /* A képet arányosan kicsinyíti, levágás nélkül */
+}
+
+
+/* Felugró ablak stílusok */
+.popup {
+    display: none; /* Kezdetben rejtve */
+    position: fixed; /* Rögzített pozíció */
+    z-index: 1000; /* Magas z-index, hogy a többi elem fölött jelenjen meg */
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fekete háttér átlátszósággal */
+}
+
+.popup-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px; /* Maximális szélesség */
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Reszponzív beállítások */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    button.tasks-button {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
