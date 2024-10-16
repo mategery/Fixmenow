@@ -41,36 +41,61 @@ $currentDateTime = date('Y-m-d\TH:i');
             </select>
             <input type="text" name="location_custom" placeholder="Ha egyéb, adja meg" id="custom_location" style="display: none;" required>
 
-            <label for="images">Kép feltöltése:</label>
-            <div class="button-container-img">
-                <input type="file" id="images" name="images[]" multiple accept="image/*" onchange="previewImages()" style="display: none;">
-                <button type="button" class="upload-button" onclick="document.getElementById('images').click();">Kép feltöltése</button>
-                <button type="button" class="clear-button" onclick="removeAllImages()" style="display: none;"><i class="fas fa-trash-alt"></i></button>
+            <div class="file-upload">
+                <input type="file" id="kep" name="kep" multiple accept="image/*">
+                <button type="button" class="upload-button">Kép feltöltése</button>
             </div>
-            <div class="image-preview" id="image_preview"></div>
-
-
-            <div class="dropdown">
-                <button type="button" class="tagbutton" onclick="toggleTags()">Tagek</button>
-                <div id="tags_dropdown" style="display:none;">
-                    <label><input type="checkbox" name="tags[]" value="Hardware"> Hardware</label>
-                    <label><input type="checkbox" name="tags[]" value="Szoftver"> Szoftver</label>
-                    <label><input type="checkbox" name="tags[]" value="Hálózat"> Hálózat</label>
-                    <label><input type="checkbox" name="tags[]" value="Egyéb"> Egyéb</label>
-                </div>
+            
+            <div class="image-preview" id="imagePreview"></div>
+            
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="tag" value="hardware"><span id="text">Hardver</span> </label>
+                <label><input type="checkbox" name="tag" value="software"> <span id="text">Szoftver</span> </label>
+                <label><input type="checkbox" name="tag" value="network"><span id="text" >Hálózat</span> </label>
+                <label><input type="checkbox" name="tag" value="other"><span id="text">Egyéb</span> </label>
             </div>
 
             <div class="button-container-send">
                 <button class="backbutton" type="button"
                 onclick="window.location.href='<?php echo ($_SESSION['rank'] == 'ta') ? 
                 'dashboard_ta.php' : ($_SESSION['rank'] == 'rg' ? 'dashboard_rg.php' : 'dashboard_mv.php'); ?>'">
-                <i class="fas fa-arrow-left"></i> Vissza
+                <i class="fas fa-arrow-left"></i> Mégse
                 </button>
                 <button type="submit" class="send-button">Küldés <i class="fas fa-paper-plane"></i></button>
             </div>
         </form>
 
         <script>
+
+            document.getElementById('kep').addEventListener('change', function() {
+                        const imagePreview = document.getElementById('imagePreview');
+                        imagePreview.innerHTML = ''; // Clear previous previews
+
+                        Array.from(this.files).forEach((file, index) => {
+                            if (file.type.startsWith('image/')) {
+                                const reader = new FileReader();
+                                reader.onload = function(e) {
+                                    const imageContainer = document.createElement('div');
+                                    imageContainer.classList.add('image-container');
+
+                                    const img = document.createElement('img');
+                                    img.src = e.target.result;
+                                    
+                                    const deleteButton = document.createElement('button');
+                                    deleteButton.classList.add('delete-button');
+                                    deleteButton.innerHTML = '&times;';
+                                    deleteButton.onclick = () => {
+                                        imageContainer.remove();
+                                    };
+
+                                    imageContainer.appendChild(img);
+                                    imageContainer.appendChild(deleteButton);
+                                    imagePreview.appendChild(imageContainer);
+                                };
+                                reader.readAsDataURL(file);
+                            }
+                        });
+                    });
         function autoResize(textarea) {
             textarea.style.height = 'auto';
             textarea.style.height = textarea.scrollHeight + 'px';
