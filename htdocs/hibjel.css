@@ -37,6 +37,9 @@ h2 {
 form {
     display: flex;
     flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Címke stílusai */
@@ -83,22 +86,6 @@ button {
 }
 
 
-/* Gomb hover állapot stílusai */
-button:hover {
-    background-color: #1E88E5;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-
-}
-
-/* Gomb aktív állapot stílusai */
-button:active {
-    transform: translateY(1px);
-    background-color: #1976D2;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-
-}
-
 /* Üzenet stílusai */
 p {
     text-align: center;
@@ -122,6 +109,7 @@ textarea {
     justify-content: space-between; /* Gombok közötti távolság kitöltése */
     margin-top: 0px;       /* Felső margó a gomboknak */
     gap: 5px;
+    width: 25%;
 
 }
 .upload-button {
@@ -133,10 +121,7 @@ textarea {
     font-size: 15px; /* Kisebb betűméret */
     flex: 1; /* Kitölti a rendelkezésre álló helyet */
     margin-top: 0px;
-}
-
-.upload-button:hover {
-    background-color: #1E88E5; /* Sötétebb zöld háttér hover esetén */
+    width: 25%;
 }
 
 .upload-button:active {
@@ -147,11 +132,10 @@ textarea {
     background-color: #F44336; /* Piros háttér a törlés gombnak */
     color: white; /* Fehér szöveg */
     border: none; /* Nincs keret */
-    padding: 5px; /* Kisebb padding */
+    /* padding: 5px; Kisebb padding */
     cursor: pointer; /* Mutatóra vált a kurzor */
     font-size: 15px; /* Kisebb betűméret */
-    margin-top: 0px;
-    width: 27px;
+    width: 50px;
 }
 
 
@@ -163,53 +147,6 @@ textarea {
     background-color: #D32F2F; /* Sötétebb piros háttér hover esetén */
 }
 
-#photo_preview {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-    justify-content: flex-start; /* Balra igazítás */
-}
-
-#photo_preview div {
-    flex: 1 1 calc(33.333% - 10px); /* Három kép egymás mellett, arányos méret */
-    max-width: calc(33.333% - 10px); /* Maximum szélesség, hogy a képek ne legyenek nagyobbak */
-    position: relative;
-}
-
-#photo_preview img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.tagbutton {
-    width: 100%; /* Kitölti a rendelkezésre álló szélességet */
-    padding: 5px 10px; /* Kisebb padding */
-    background-color: #2196F3;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 15px; /* Nagyobb betűméret */
-    font-weight: bold;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
-
-/* A többi stílus megmarad... */
-
-#tags_container {
-    display: flex;
-    flex-direction: row; /* Egy sorba rendezi a checkboxokat és címkéket */
-    flex-wrap: wrap; /* Engedélyezi a sortörést, ha a szélesség nem elegendő */
-    gap: 10px; /* Közötti távolság beállítása */
-}
-
-#tags_container label {
-    display: flex; /* A checkbox és a címke egy sorban legyen */
-    align-items: center; /* Középre igazítja a checkboxot és a címkét */
-}
 
 .button-container-send {
     display: flex;
@@ -250,17 +187,96 @@ textarea {
     background-color: #D32F2F;
 }
 
-/* Kép előnézet stílusai */
-.image-preview {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-    margin-bottom: 0px;
+.dropdown {
+    position:relative;
+    left: 375px; bottom: 40px;
 }
 
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 65px;
+    margin-bottom: auto;
+}
+.checkbox-group label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    gap: 5px;
+    white-space: nowrap;
+    margin-top: 5px;
+}
+#text{
+    position: relative;
+    
+}
+.image-preview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+.image-preview .image-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
 .image-preview img {
-    width: 100px; /* Kép szélessége */
-    height: auto; /* Automatikus magasság */
-    border-radius: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.delete-button {
+    position: absolute;
+    top: -12px;
+    right: 5px;
+    background-color: rgba(255, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+
+    
+}
+
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.file-upload input[type="file"] {
+    font-size: 100px; /* Set font size to a high value to hide the input */
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0; /* Make it invisible */
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+.file-upload .upload-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+    width: 30%; /* Make button full width */
+    text-align: center;
+}
+.file-upload .upload-button:hover {
+    background-color: #155093;
 }
