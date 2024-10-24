@@ -1,0 +1,118 @@
+/* Színváltozók */
+:root {
+    --primary-color: #77a6d3; /* Alap gomb szín (sötétebb pasztell kék) */
+    --primary-color-hover: #71a6d7; /* Gomb hover szín (még világosabb kék) */
+    --primary-color-active: #5688b9; /* Gomb aktív szín (sötétebb kék) */
+    
+    --danger-color: #FF7F7F; /* Törlés gomb szín (halvány piros) */
+    --danger-color-hover: #FF5C5C; /* Törlés gomb hover szín (élénkebb piros) */
+    --danger-color-active: #FF3A3A; /* Törlés gomb aktív szín (sötétebb piros) */
+
+    --success-color: #81C784; /* Feltöltés gomb szín (halvány zöld) */
+    --success-color-hover: #66BB6A; /* Feltöltés gomb hover szín (élénkebb zöld) */
+    --success-color-active: #4CAF50; /* Feltöltés gomb aktív szín (sötétebb zöld) */
+}
+
+/* Alap stílusok az egész oldalra */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Középre igazítás fentről */
+    flex-direction: column; /* Fentről lefelé állítva */
+    height: auto; /* Nincs fix magasság */
+    margin: 0;
+    padding: 0 15px; /* Padding mobilra */
+}
+
+/* Táblázat tartalom */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto; /* Középre igazítás */
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Flexbox a táblázatok számára */
+.tables-container {
+    display: flex;
+    justify-content: space-between; /* Az egymás melletti elrendezéshez */
+}
+
+/* Táblázat wrapper */
+.table-wrapper {
+    flex: 1; /* A táblázatok egyenlő teret foglaljanak el */
+    margin: 0 10px; /* Kisebb távolság a táblázatok között */
+}
+
+/* Táblázat stílusok */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Tábla vonalak összeolvasztása */
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px; /* Belső tér növelése */
+    text-align: left; /* Balra igazítás */
+    border: 1px solid #ddd; /* Szegélyek */
+}
+
+th {
+    background-color: #f2f2f2; /* Fejléc háttérszíne */
+}
+
+tr:hover {
+    background-color: #f9f9f9; /* Sorok hover színe */
+}
+
+/* Gomb csoport */
+.button-group {
+    margin-top: 20px; /* Fölötte lévő táblázatok elválasztása */
+    display: flex;
+    justify-content: flex-start;
+}
+
+.back-button, .mytasks-button {
+    padding: 10px 15px;
+    margin-right: 10px; /* Távolság a gombok között */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.back-button {
+    background-color: var(--primary-color); /* Alap gomb szín */
+    color: white; /* Betűszín */
+}
+
+.back-button:hover {
+    background-color: var(--primary-color-hover); /* Hover szín */
+}
+
+.mytasks-button {
+    background-color: var(--success-color); /* Feltöltés gomb szín */
+    color: white; /* Betűszín */
+}
+
+.mytasks-button:hover {
+    background-color: var(--success-color-hover); /* Hover szín */
+}
+
+/* Reszponzív stílusok */
+@media (max-width: 768px) {
+    .tables-container {
+        flex-direction: column; /* Mobilon egymás alá helyezés */
+    }
+    
+    .table-wrapper {
+        margin: 0; /* Nincs margin mobilon */
+        margin-bottom: 20px; /* Alsó távolság a táblázatok között */
+    }
+}

@@ -1,0 +1,192 @@
+/* Színváltozók */
+:root {
+    --primary-color: #77a6d3; /* Alap gomb szín (sötétebb pasztell kék) */
+    --primary-color-hover: #71a6d7; /* Gomb hover szín (még világosabb kék) */
+    --primary-color-active: #5688b9; /* Gomb aktív szín (sötétebb kék) */
+    
+    --danger-color: #FF7F7F; /* Törlés gomb szín (halvány piros) */
+    --danger-color-hover: #FF5C5C; /* Törlés gomb hover szín (élénkebb piros) */
+    --danger-color-active: #FF3A3A; /* Törlés gomb aktív szín (sötétebb piros) */
+
+    --success-color: #81C784; /* Feltöltés gomb szín (halvány zöld) */
+    --success-color-hover: #66BB6A; /* Feltöltés gomb hover szín (élénkebb zöld) */
+    --success-color-active: #4CAF50; /* Feltöltés gomb aktív szín (sötétebb zöld) */
+}
+
+/* Alap stílusok az egész oldalra */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c1c1c1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0 15px; /* Padding mobilra */
+}
+
+/* Táblázat stílusai */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Összevont határok */
+    margin-top: 20px;
+    table-layout: fixed; /* Fix elrendezés */
+    font-family: arial;
+}
+
+th, td {
+    padding: 15px; /* Belső margó */
+    text-align: left; /* Szöveg igazítása balra */
+    font-size: 18px; /* Növelt betűméret a táblázat celláiban */
+    font-weight: bold;
+    color: #555;
+}
+
+th {
+    background-color: var(--primary-color); /* Alap gomb szín */
+    color: white; /* Fehér szöveg szín */
+    font-weight: bold; /* Fejléc vastag betűvel */
+    cursor: auto;
+}
+
+tr {
+    border-radius: 12px; /* Kerekített sarkok */
+    cursor: pointer;
+}
+
+tr:hover {
+    background-color: #d4d4d4; /* Sötétebb kék hover szín */
+}
+
+/* Első oszlop fix szélességgel */
+th:first-child, td:first-child {
+    width: 200px; /* Fix szélesség (például 200px) */
+}
+
+/* Üzenetek stílusai */
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px; /* Csökkentett padding mobilra */
+    background-color: rgb(238, 238, 238);
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Mélyebb árnyék */
+    position: relative;
+}
+
+/* Cím stílusai */
+h1 {
+    font-size: 35px; /* Növelt betűméret */
+    text-align: center;
+    letter-spacing: 2px; /* Betűk közötti távolság */
+    text-transform: uppercase;
+    color: #333;
+    margin: 0 0 20px; /* Cím margók */
+}
+
+/* Vissza és Feladatok ikon stílusai */
+.back-icon, .mytasks-icon {
+    cursor: pointer; /* Kézmutató kurzor */
+    font-size: 48px; /* Ikon mérete */
+}
+
+.back-icon {
+    color: var(--danger-color); /* Piros szín */
+    margin-right: 10px; /* Térköz a vissza ikon és a cím között */
+}
+
+.mytasks-icon {
+    margin-left: 10px; /* Térköz a cím és a könyv ikon között */
+    color: var(--success-color); /* Zöld szín */
+}
+
+/* Ikon hover és active állapotok */
+.back-icon:hover {
+    color: var(--danger-color-hover); /* Sötétebb piros hover állapotban */
+}
+
+.mytasks-icon:hover {
+    color: var(--success-color-hover); /* Sötétebb zöld hover állapotban */
+}
+
+.back-icon:active {
+    color: #a82525; /* Sötétebb piros active állapotban */
+}
+
+.mytasks-icon:active {
+    color: #2e7d32; /* Sötétebb zöld active állapotban */
+}
+
+/* Gombok stílusai */
+button {
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
+    flex-grow: 0; /* Nem nő a rendelkezésre álló hely kitöltéséhez */
+    width: 150px; /* Gombok fix szélessége */
+}
+
+.button-group {
+    display: flex;
+    justify-content: center; /* Gombok középre igazítása */
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Gomb színek és állapotok */
+.back-button {
+    background-color: var(--danger-color); /* Törlés gomb szín */
+}
+
+.mytasks-button {
+    background-color: var(--success-color); /* Feltöltés gomb szín */
+}
+
+.back-button:hover {
+    background-color: var(--danger-color-hover); /* Törlés gomb hover szín */
+}
+
+.mytasks-button:hover {
+    background-color: var(--success-color-hover); /* Feltöltés gomb hover szín */
+}
+
+.back-button:active {
+    background-color: var(--danger-color-active); /* Törlés gomb aktív szín */
+}
+
+.mytasks-button:active {
+    background-color: var(--success-color-active); /* Feltöltés gomb aktív szín */
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Média lekérdezés a mobil optimalizáláshoz */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px; /* További csökkentés kis képernyőkön */
+    }
+
+    th, td {
+        font-size: 16px; /* Csökkentett betűméret a táblázat celláiban */
+        padding: 10px; /* Belső margó csökkentése */
+    }
+
+    .back-icon, .mytasks-icon {
+        font-size: 30px; /* Ikon méret csökkentése mobilon */
+    }
+}

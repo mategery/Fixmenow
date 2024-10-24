@@ -1,0 +1,207 @@
+/* Színváltozók */
+:root {
+    --primary-color: #7DAEDB; /* Alap gomb szín (sötétebb pasztell kék) */
+    --primary-color-hover: #6FA4D7; /* Gomb hover szín (még világosabb kék) */
+    --primary-color-active: #5B8FC2; /* Gomb aktív szín (sötétebb kék) */
+    
+    --danger-color: #FF7F7F; /* Törlés gomb szín (halvány piros) */
+    --danger-color-hover: #FF5C5C; /* Törlés gomb hover szín (élénkebb piros) */
+    --danger-color-active: #FF3A3A; /* Törlés gomb aktív szín (sötétebb piros) */
+
+    --success-color: #81C784; /* Feltöltés gomb szín (halvány zöld) */
+    --success-color-hover: #66BB6A; /* Feltöltés gomb hover szín (élénkebb zöld) */
+    --success-color-active: #4CAF50; /* Feltöltés gomb aktív szín (sötétebb zöld) */
+}
+
+/* Általános beállítások */
+body {
+    font-family: 'Arial';
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    height: 100vh;
+}
+
+/* Konténer stílus */
+.container {
+    background-color: white;
+    padding: 20px;
+    padding-top: 0px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    max-width: 80%;
+    margin: auto;
+    border-radius: 8px;
+    position: relative;
+}
+
+/* Cím stílus */
+h1 {
+    font-size: 35px; /* Növelt betűméret */
+    text-align: center;
+    letter-spacing: 2px; /* Betűk közötti távolság */
+    text-transform: uppercase;
+    margin: 20px;
+    color: #333;
+}
+
+/* Szöveg stílusok */
+p {
+    font-size: 18px;
+    margin: 15px 0;
+    color: #555;
+}
+
+p strong {
+    color: #222;
+}
+
+button {
+    padding: 10px; /* Nagyobb gomb méret */
+    color: white;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap; /* Megakadályozza a sortörést */
+    font-size: 20px;
+    text-align: center;
+    border-radius: 4px;
+    width: 100%;
+    font-weight: bold;
+}
+
+/* Gomb hover állapot stílusai */
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Gomb aktív állapot stílusai */
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Gomb stílusok */
+.back-button {
+    background-color: var(--danger-color); /* Piros szín */
+}
+
+.accept-button {
+    background-color: var(--success-color); /* Zöld szín */
+}
+
+/* Gomb hover állapot színek */
+.back-button:hover {
+    background-color: var(--danger-color-hover); /* Sötétebb piros hover állapotban */
+}
+
+.accept-button:hover {
+    background-color: var(--success-color-hover); /* Sötétebb zöld hover állapotban */
+}
+
+/* Gomb active állapot színek */
+.back-button:active {
+    background-color: var(--danger-color-active); /* Sötétebb piros active állapotban */
+}
+
+.accept-button:active {
+    background-color: var(--success-color-active); /* Sötétebb zöld active állapotban */
+}
+
+/* Gombok csoport stílusa */
+.button-group {
+    display: flex;
+    justify-content: center; /* Középre igazítás */
+    gap: 10px; /* Térköz a gombok között */
+}
+
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* A képek közötti távolság */
+    margin-bottom: 20px;
+}
+
+.report-image {
+    max-height: 150px; /* Maximum szélesség a képeknek */
+    height: auto; /* Arányos magasság */
+    object-fit: contain; /* A képet arányosan kicsinyíti, levágás nélkül */
+}
+
+/* Felugró ablak stílusok */
+.popup {
+    display: none; /* Kezdetben rejtve */
+    position: fixed; /* Rögzített pozíció */
+    z-index: 1000; /* Magas z-index, hogy a többi elem fölött jelenjen meg */
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fekete háttér átlátszósággal */
+}
+
+.popup-content {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    max-width: 700px; /* Maximális szélesség */
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Mobil optimalizálás */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 8px;
+    }
+
+    .button-group {
+        flex-direction: column-reverse; /* A gombok sorrendjének megfordítása mobil nézetben */
+    }
+
+    .popup-content {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .image-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .report-image {
+        max-width: 100%;
+    }
+}
